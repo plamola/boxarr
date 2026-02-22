@@ -7,8 +7,10 @@ services:
     # image: iongpt/boxarr:latest
     container_name: boxarr
     
-    # No environment variables needed!
-    # Everything configured via web UI
+    # Timezone defaults to America/New_York
+    # To set a different time zone, use the environment variable TZ, as shown below
+    # environment:
+    #   - TZ=Europe/Amsterdam
     
     volumes:
       # Configuration and data persistence

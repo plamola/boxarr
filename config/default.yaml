@@ -21,6 +21,7 @@ boxarr:
   scheduler:
     enabled: true
     cron: "0 23 * * 2"  # Tuesday at 11 PM
+    timezone: ${TZ:America/New_York}
     
   # Feature flags
   features:

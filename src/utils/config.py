@@ -9,6 +9,8 @@ import yaml
 from pydantic import BaseModel, Field, HttpUrl, validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+from src.utils import yaml_loader
+
 
 class ThemeEnum(str, Enum):
     """Available UI themes."""
@@ -280,8 +282,9 @@ class Settings(BaseSettings):
     def load_from_yaml(self, config_path: Path) -> None:
         """Load configuration from YAML file."""
         if config_path.exists():
-            with open(config_path) as f:
-                config_data = yaml.safe_load(f) or {}
+            #  with open(config_path) as f:
+            #      config_data = yaml.safe_load(f)
+            config_data = yaml_loader.load_yaml(config_path)
 
             # Process configuration sections
             for section, values in config_data.items():
