@@ -27,7 +27,7 @@ def _path_constructor(_loader: Any, node: Any):
     return _var_matcher.sub(replace_fn, node.value)
 
 
-def load_yaml(config_path: Path) -> dict:
+def load_yaml(config_path: Path) -> Any:
     yaml.add_implicit_resolver("!envvar", _tag_matcher, None, yaml.SafeLoader)
     yaml.add_constructor("!envvar", _path_constructor, yaml.SafeLoader)
     try:
