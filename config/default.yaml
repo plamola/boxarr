@@ -15,7 +15,7 @@ radarr:
 boxarr:
   # Server configuration
   host: "0.0.0.0"
-  port: 8888
+  port: ${PORT:8888}
   
   # Scheduler configuration  
   scheduler:
